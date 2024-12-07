@@ -20,12 +20,14 @@ export class AppService {
   async createUser(req, res) {
     if (!req.body.name) {
       res.status(400);
-      return;
+      res.json({});
+      return res;
     }
 
     if (!req.body.email) {
       res.status(400);
-      return;
+      res.json({});
+      return res;
     }
 
     const user = new this.userModel(req.body);
